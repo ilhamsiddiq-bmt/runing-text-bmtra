@@ -1,5 +1,56 @@
-<link href="https://fonts.googleapis.com/css?family=Pridi:600" rel="stylesheet">
-
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      margin: 0;
+    }
+    
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+    
+    .marquee {
+      overflow: hidden;
+      font-family: "Pridi", sans-serif;
+      font-weight: 600;
+      font-size: 34px;
+      text-transform: uppercase;
+      background-color: #FFDC00;
+    }
+    
+    .marquee__inner {
+      display: flex;
+    }
+    
+    .marquee__line {
+      flex-shrink: 0;
+      margin: 0;
+      padding: 10px 15px;
+      min-width: 100%;
+      white-space: nowrap;
+      animation-name: marqueeLine;
+      animation-duration: 5s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+    }
+    
+    @keyframes marqueeLine {
+      from {
+        transform: translateX(0);
+      }
+      
+      to {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Pridi:600" rel="stylesheet">
+</head>
+<body>
 <div class="marquee">
   <div class="marquee__inner">
     <p class="marquee__line">🔥 Selamat datang di KSPPS BMT Rukun Abadi.</p>
@@ -8,3 +59,5 @@
     <p class="marquee__line">Koperasi Simpan Pinjam dan Pembiayaan Syariah (KSPPS) BMT Rukun Abadi.</p>
   </div>
 </div>
+</body>
+</html>
