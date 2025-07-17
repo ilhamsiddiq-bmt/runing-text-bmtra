@@ -1,63 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
   <meta charset="UTF-8">
+  <title>Running Text</title>
   <style>
     body {
       margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #000;
+      font-family: Arial, sans-serif;
     }
-    
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-    
-    .marquee {
+
+    .marquee-container {
+      width: 100%;
       overflow: hidden;
-      font-family: "Pridi", sans-serif;
-      font-weight: 600;
-      font-size: 34px;
-      text-transform: uppercase;
-      background-color: #FFDC00;
+      background: #f8f8f8;
+      border-top: 2px solid #ccc;
+      border-bottom: 2px solid #ccc;
+      padding: 10px 0;
     }
-    
-    .marquee__inner {
-      display: flex;
-    }
-    
-    .marquee__line {
-      flex-shrink: 0;
-      margin: 0;
-      padding: 10px 15px;
-      min-width: 100%;
+
+    .marquee-content {
+      display: inline-block;
       white-space: nowrap;
-      animation-name: marqueeLine;
-      animation-duration: 5s;
-      animation-timing-function: ease-in-out;
-      animation-iteration-count: infinite;
+      animation: scroll-left 30s linear infinite;
+      font-size: 20px;
     }
-    
-    @keyframes marqueeLine {
-      from {
-        transform: translateX(0);
-      }
-      
-      to {
-        transform: translateX(-100%);
-      }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .marquee-item {
+      display: inline-block;
+      margin-right: 50px;
     }
   </style>
-  <link href="https://fonts.googleapis.com/css?family=Pridi:600" rel="stylesheet">
 </head>
 <body>
-<div class="marquee">
-  <div class="marquee__inner">
-    <p class="marquee__line">🔥 Selamat datang di KSPPS BMT Rukun Abadi.</p>
-    <p class="marquee__line">Papan Informasi BMT Rukun Abadi Kantor Pusat.</p>
-    <p class="marquee__line">Update informasi terbaru setiap hari 🔄.</p>
-    <p class="marquee__line">Koperasi Simpan Pinjam dan Pembiayaan Syariah (KSPPS) BMT Rukun Abadi.</p>
+
+  <div class="marquee-container">
+    <div class="marquee-content">
+      <span class="marquee-item">📢 Selamat datang di KSPPS BMT Rukun Abadi!</span>
+      <span class="marquee-item">📊 Data akan diperbarui setiap 5 menit.</span>
+      <span class="marquee-item">🚨 Koperasi Simpan Pinjam dan Pembiayaan Syariah (KSPPS) BMT Rukun Abadi.</span>
+      <span class="marquee-item">🎯 Target bulan ini adalah peningkatan 20% produktivitas.</span>
+      <span class="marquee-item">🕒 Jangan lupa mengisi Absensi Datang maupun Absensi Pulang.</span>
+      <!-- Tambahkan item di bawah ini tanpa batas -->
+      <span class="marquee-item">✅ Papan Informasi BMT Rukun Abadi Kantor Pusat!</span>
+    </div>
   </div>
-</div>
+
 </body>
 </html>
